@@ -133,7 +133,7 @@
         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
     }
     50% {
-        transform: translate(137.186035px, 126px);
+        transform: translate(137.186035px, 123px);
         animation-timing-function: cubic-bezier(0.42, 0, 0.58, 1)
     }
     100% {
