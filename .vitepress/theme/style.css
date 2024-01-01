@@ -120,6 +120,12 @@
 
 .VPHero .image img {
     max-width: 380px;
+    min-width: 380px;
+    max-height: 380px;
+}
+
+.VPHero .image:hover img {
+    animation-play-state: paused;
 }
 
 /**
