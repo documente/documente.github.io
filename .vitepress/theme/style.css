@@ -124,10 +124,6 @@
     max-height: 380px;
 }
 
-.VPHero .image:hover img {
-    animation-play-state: paused;
-}
-
 /**
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
