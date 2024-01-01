@@ -119,8 +119,8 @@
 }
 
 .VPHero .image img {
-    max-width: 380px;
-    min-width: 380px;
+    max-width: min(380px, 80%);
+    min-width: max(290px, min(380px, 80%));
     max-height: 380px;
 }
 
