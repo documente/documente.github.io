@@ -22,7 +22,7 @@ export default defineConfig({
           { text: 'Get started', link: '/get-started' },
           { text: 'CLI configuration', link: '/cli-configuration' },
           { text: 'Language overview', link: '/language-overview' },
-          { text: 'Testing API', link: '/testing-api' },
+          { text: 'API reference', link: '/api-reference' },
           { text: 'Externals file', link: '/externals-file' },
         ]
       }

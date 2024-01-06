@@ -4,6 +4,8 @@ outline: [2, 3]
 
 # Testing API
 
+Documenté comes with pre-defined actions and assertions that cover most of the common use cases.
+
 ## Built-in actions
 
 ### visit

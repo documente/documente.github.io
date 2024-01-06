@@ -8,6 +8,8 @@ The externals file is specified with the `externals` property in the configurati
 
 ## Example
 
+Here is an example of an externals file that exposes a function to call a REST API endpoint using Cypress:
+
 ```js
 // externals.js
 module.exports = {

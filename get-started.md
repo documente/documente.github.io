@@ -1,5 +1,7 @@
 # Get started
 
+This guide will help you get started with Documenté. You will learn how to set up your project, write your first specification using the Phrasé language, and run your tests generated from your documentation.
+
 ## Set up your project
 
 ### Prerequisites
@@ -76,7 +78,8 @@ then welcome message should be visible
 and it should have text "Welcome, user01!"
 ```
 
-In order to login, simply type your username and password in the login form and click on the login button.
+In order to login, simply type your username and password in the login form
+and click on the login button.
 
 ```phrase
 In order to login:
@@ -123,4 +126,4 @@ playwright test --ui
 
 ## Example project
 
-You can find an example repository [here](https://github.com/documente/example-sut) with a simple application and a set of specifications.
+You can find an example repository [here](https://github.com/documente/example-sut) with a simple application, a Documenté configuration, and a set of specifications.

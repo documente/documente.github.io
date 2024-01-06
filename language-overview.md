@@ -4,8 +4,6 @@ outline: [2, 3]
 
 # Language Overview
 
-## Introduction
-
 Documenté is based on a language called Phrasé.
 It is based on Behavior-Driven Development (BDD) with Given-When-Then keywords.
 It is designed to be intuitive and easy to learn.
@@ -14,7 +12,20 @@ It is designed to be intuitive and easy to learn.
 
 ### Given-When-Then section
 
-An individual test case is structured with a Given-When-Then section.
+An individual test case is structured with a Given-When-Then section that describes the test scenario.
+
+Examples of test scenarios:
+
+```
+Given I visit "http://localhost:3000/myapp"
+When I login as "user1"
+Then welcome message should be visible
+and it should have text "Welcome, user1!"
+
+Given I visit "http://localhost:3000/myapp"
+When I click on About menu item
+Then About page should be visible
+```
 
 #### Given
 
