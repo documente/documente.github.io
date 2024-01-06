@@ -23,7 +23,7 @@ Prerequisites involve actions on the system, either in the form of user actions 
 
 - A user action starts with the `I` pronoun, followed by a verb. Actions may include a target, introduced by the `on` preposition.
 The target is identified as a component, chosen by specifying a path in the System Under Test (SUT) tree representation. This path is a sequence of component names separated by spaces.
-- A system state change is expressed by a free-form statement which can include arguments. System state changes are mapped to custom functions declared in the Externals file.
+- A system state change is expressed by a free-form statement which can include arguments. System state changes are mapped to custom functions declared in the [Externals file](/externals-file).
 
 User actions and system state changes can be linked using the `and` keyword.
 
@@ -51,9 +51,10 @@ Likewise, actions within the `when` section can be connected using the `and` key
 Examples:
 
 ```
-when I click on welcome page greet button
+When I click on welcome page greet button
 
-when I type "John" in welcome page name input and click on welcome page greet button
+When I type "John" in welcome page name input
+and click on welcome page greet button
 ```
 
 #### Then
@@ -69,11 +70,13 @@ Examples:
 ```
 then welcome message should be visible
 
-then welcome message should be visible and it should have fragment highlighted "John"
+then welcome message should be visible
+and it should have fragment highlighted "John"
 
 then welcome page name input should be disabled
 
-then login form should be visible and it should display the error message "Invalid credentials"
+then login form should be visible
+and it should display the error message "Invalid credentials"
 ```
 
 ### Custom actions
@@ -173,9 +176,11 @@ The `it` keyword is used to refer to the component selected in the previous step
 Examples:
 
 ```
-then welcome message should be visible and it should have fragment highlighted "John"
+then welcome message should be visible
+and it should have fragment highlighted "John"
 
-then logout button should be visible and it should be disabled
+then logout button should be visible
+and it should be disabled
 ```
 
 ### `its`
@@ -185,7 +190,9 @@ The `its` keyword is used to refer to the component selected in the previous ste
 Examples:
 
 ```
-then login form should be visible and its submit button should be disabled
+then login form should be visible
+and its submit button should be disabled
 
-then welcome message should be visible and its close button should be focused
+then welcome message should be visible
+and its close button should be focused
 ```
