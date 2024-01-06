@@ -1,3 +1,7 @@
+---
+outline: [2, 3]
+---
+
 # CLI Configuration
 
 The configuration file is a YAML file containing the options used by the CLI.
