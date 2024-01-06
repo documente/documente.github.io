@@ -21,6 +21,7 @@ export default defineConfig({
           { text: 'What is Documenté', link: '/guide' },
           { text: 'Get started', link: '/get-started' },
           { text: 'Language overview', link: '/language-overview' },
+          { text: 'Testing API', link: '/testing-api' },
         ]
       }
     ],
