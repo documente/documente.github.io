@@ -43,7 +43,7 @@ Given the task list has 3 tasks
 
 #### When
 
-The when part is a mandatory component that specifically outlines user actions crucial for the test scenario.
+The `when` part is a mandatory component that specifically outlines user actions crucial for the test scenario.
 
 This part adheres to the same structured approach employed in the `given` part for specifying user actions within the test scenario.
 Likewise, actions within the `when` section can be connected using the `and` keyword.

@@ -20,6 +20,7 @@ export default defineConfig({
         items: [
           { text: 'What is Documenté', link: '/guide' },
           { text: 'Get started', link: '/get-started' },
+          { text: 'CLI configuration', link: '/cli-configuration' },
           { text: 'Language overview', link: '/language-overview' },
           { text: 'Testing API', link: '/testing-api' },
           { text: 'Externals file', link: '/externals-file' },
