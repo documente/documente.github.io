@@ -207,3 +207,9 @@ and its submit button should be disabled
 then welcome message should be visible
 and its close button should be focused
 ```
+
+## Environment variables
+
+Environment variables are accessed with the Moustache-like syntax <code v-pre>{{variable name}}</code>.
+
+They are defined in the [environment file](/environment-file).

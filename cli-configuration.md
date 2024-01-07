@@ -24,6 +24,7 @@ selectors: tests/selectors.yml
 runner: cypress
 outputDir: cypress/integration
 testRegex: '```test(\[^`]*)```'
+env: tests/env.yml
 ```
 
 ## Options
@@ -60,7 +61,6 @@ For Playwright, the default value is `tests`.
 The default value is <code v-pre>\```phras\[ée](\[^`]*)```</code>.
 This regex matches the following Markdown code block:
 
-
 ````
 ```phrasé
 When I visit the homepage
@@ -72,3 +72,11 @@ When I visit the login page
 then the login form should be visible
 ```
 ````
+
+### env
+
+(Optional) A path to a YAML file containing the environment variables used in the test files.
+
+The YAML file must contain a dictionary of strings.
+
+See [Environment file](/environment-file) for more details.

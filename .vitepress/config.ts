@@ -24,6 +24,7 @@ export default defineConfig({
           { text: 'Language overview', link: '/language-overview' },
           { text: 'API reference', link: '/api-reference' },
           { text: 'Externals file', link: '/externals-file' },
+          { text: 'Environment file', link: '/environment-file' },
         ]
       }
     ],
