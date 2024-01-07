@@ -11,7 +11,7 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide' },
       { text: 'Language', link: '/language-overview' },
-      { text: 'Examples', link: 'https://documente.github.io/kitchen-sink' },
+      { text: 'Examples', link: '/examples' },
     ],
 
     sidebar: [
@@ -25,6 +25,7 @@ export default defineConfig({
           { text: 'API reference', link: '/api-reference' },
           { text: 'Externals file', link: '/externals-file' },
           { text: 'Environment file', link: '/environment-file' },
+          { text: 'Examples', link: '/examples' },
         ]
       }
     ],
