@@ -65,6 +65,13 @@ welcome message: .welcome-message
 
 Specifications are written in Markdown files, using the [Phrasé](https://github.com/documente/phrase) syntax.
 
+::: tip
+You can also read Phrasé code from other kind of files.
+For example the [Kitchen sink](https://documente.github.io/kitchen-sink/) project extracts tests embedded in a JS file
+by setting the [`testRegex`](/cli-configuration#testregex) option.
+:::
+
+
 Here is an example of a specification file:
 
 ````markdown
