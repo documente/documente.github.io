@@ -8,10 +8,10 @@ Documenté is based on a language called Phrasé.
 It is based on Behavior-Driven Development (BDD) with Given-When-Then keywords.
 It is designed to be intuitive and easy to learn.
 
-### Fluent Component Selection
+## Fluent Component Selection
 
 Within test sentences, component selection is facilitated by traversing the System Under Test (SUT) tree representation
-defined in the [selectors file](/selectors-file).
+defined in the selectors file.
 
 For instance, consider the following selectors tree:
 
@@ -42,7 +42,15 @@ then foo should be hidden
 
 Note that the `foo` component is not explicitly selected in the `when` sections.
 
-This fluent selection mechanism enhances the ease with which components can be identified and interacted with in your test sentences.
+This fluent selection mechanism enhances the ease with which components can be identified and interacted with in your
+test sentences.
+
+## Statements
+
+A **statement** is a sentence that describes an action or an assertion. They can take multiple forms:
+- [User actions](#user-actions)
+- [System state changes](#system-state-changes)
+- [Assertions](#assertions)
 
 ### Actions
 
@@ -54,9 +62,12 @@ take two forms:
 
 #### User actions
 
-These interactions typically mirror user actions, such as clicking buttons, entering text, navigating through pages, or interacting with various elements.
+These interactions typically mirror user actions, such as clicking buttons, entering text, navigating through pages,
+or interacting with various elements.
 
-Actions are integral components of test scenarios, encapsulating the steps required to simulate user behavior and interactions with the application. They serve as the building blocks for constructing meaningful and comprehensive test cases.
+Actions are integral components of test scenarios, encapsulating the steps required to simulate user behavior and
+interactions with the application. They serve as the building blocks for constructing meaningful and comprehensive test
+cases.
 
 The library provides a range of built-in user actions, simplifying the testing process for common operations, including:
 
@@ -66,31 +77,21 @@ The library provides a range of built-in user actions, simplifying the testing p
 - clear
 - hover
 
-You can also define custom user actions. This allows testers and developers to define actions that are specific to their application requirements or to encapsulate complex sequences of interactions.
-
-Example custom user action :
-
-```
-When I enter "Hello, World!" in message field
-then welcome message should be visible
-done
-
-In order to enter {{text}} in $element:
-- I click on its button
-- I type "{{text}}" into input
-- I click confirm button
-done
-```
-
-Custom actions are structured with a header following the form `In order to [action name]:`, followed by a bullet list of statements detailing the steps required for the action to complete. These custom actions can also define named parameters using the mustache-like syntax `{{parameter name}}`.
+You can also define [custom user actions](#custom-actions). This allows you to define actions that are specific to 
+your application requirements or to encapsulate complex sequences of interactions.
 
 #### System state changes
 
-System state changes are used to define the initial state of the application under test (SUT) or to simulate changes in the system state. These changes can be used to set up the application for testing or to simulate specific scenarios.
+System state changes are used to define the initial state of the application under test (SUT) or to simulate changes in
+the system state. These changes can be used to set up the application for testing or to simulate specific scenarios.
+
+They are mapped to a custom function defined in the [Externals file](/externals-file).
 
 ### Assertions
 
-Assertions refer to statements or conditions that validate the expected outcomes of specific actions or interactions within your test scenarios. These statements act as checkpoints, ensuring that the application under test behaves as anticipated.
+Assertions refer to statements or conditions that validate the expected outcomes of specific actions or interactions
+within your test scenarios. These statements act as checkpoints, ensuring that the application under test behaves as
+anticipated.
 
 The library provides built-in assertions such as :
 
@@ -98,21 +99,8 @@ The library provides built-in assertions such as :
 - should exist
 - should have text
 
-As every application is different, you can also define custom assertions or overwrite the existing ones.
-
-Example custom assertion:
-
-```
-When I click on login form confirm button then login form should show login error message
-done
-
-For $element to show login error message:
-- its error message should be visible
-- it should have text "Please check your credentials"
-done
-```
-
-Custom assertions are built with a header following the form `For $element to [assertion name]:`, followed by a bullet list of statements.
+As every application is different and encourage reusability, you can also define custom assertions with
+[custom assertion sections](#custom-assertions).
 
 ## Sections
 
@@ -149,11 +137,8 @@ Then About page should be visible
 #### Given
 
 The `given` part is optional and serves to establish prerequisites for the test.
-Prerequisites involve actions on the system, either in the form of user actions or system state changes.
-
-- A user action starts with the `I` pronoun, followed by a verb. Actions may include a target, introduced by the `on` preposition.
-  The target is identified as a component, chosen by specifying a path in the System Under Test (SUT) tree representation. This path is a sequence of component names separated by spaces.
-- A system state change is expressed by a free-form statement which can include arguments. System state changes are mapped to custom functions declared in the [Externals file](/externals-file).
+Prerequisites involve actions on the system, either in the form of [user actions](#user-actions) or
+[system state changes](#system-state-changes).
 
 User actions and system state changes can be linked using the `and` keyword.
 
@@ -175,8 +160,8 @@ Given the task list has 3 tasks
 
 The `when` part is a mandatory component that specifically outlines user actions crucial for the test scenario.
 
-This part adheres to the same structured approach employed in the `given` part for specifying user actions within the test scenario.
-Likewise, actions within the `when` section can be connected using the `and` keyword.
+This part adheres to the same structured approach employed in the `given` part for specifying user actions within the
+test scenario. Likewise, actions within the `when` section can be connected using the `and` keyword.
 
 Examples:
 
@@ -189,11 +174,12 @@ and click on welcome page greet button
 
 #### Then
 
-The `then` part, also mandatory, is used to express expectations regarding the system state, such as message visibility or the disabled status of a text input. Expectations can be linked with the `and` keyword.
+The `then` part, also mandatory, is used to express expectations regarding the system state, such as message visibility
+or the disabled status of a text input. Expectations can be linked with the `and` keyword.
 
 These expectations are conveyed by selecting a component and defining an assertion to execute.
 
-Assertions, whether built-in or custom, are consistently identified by the keyword should.
+Assertions, whether built-in or [custom](#custom-assertions), are consistently identified by the keyword `should`.
 
 Examples:
 
@@ -253,15 +239,18 @@ In order to send message {{message}}:
 - I click on send button
 ```
 
-Note that custom actions can also include assertions. This is useful when you need to check the result of an action before continuing interacting with the application.
+Note that custom actions can also include assertions. This is useful when you need to check the result of an action
+before continuing interacting with the application.
 
 ### Custom assertions
 
 Custom assertions are used to group multiple assertions into a single statement.
 
-Custom assertions are built with a header following the form `For $element to [assertion name]:`, followed by a bullet list of statements.
+Custom assertions are built with a header following the form `For $element to [assertion name]:`, followed by a bullet
+list of statements.
 
-Just like custom actions, custom assertions can take named parameters using the mustache-like syntax <code v-pre>{{parameter name}}</code>.
+Just like custom actions, custom assertions can take named parameters using the mustache-like syntax
+<code v-pre>{{parameter name}}</code>.
 
 Examples:
 
@@ -282,6 +271,9 @@ Then login form should show error message "Invalid credentials"
 ## Quoted text and numbers
 
 Quoted text and numbers are used to specify values for parameters in the test sentences.
+
+Quoted text uses double quotes (e.g. `"John"`). Numbers are not quoted and must be sequences of characters that can be
+parsed as a number (e.g. `123.456`).
 
 Parameters can be used in selectors, actions, and assertions.
 
@@ -315,7 +307,8 @@ and it should be disabled
 
 ### `its`
 
-The `its` keyword is used to refer to the component selected in the previous step for the purpose of selecting a child component.
+The `its` keyword is used to refer to the component selected in the previous step for the purpose of selecting a child
+component.
 
 Examples:
 
@@ -329,6 +322,6 @@ and its close button should be focused
 
 ## Environment variables
 
-Environment variables are accessed with the Moustache-like syntax <code v-pre>{{variable name}}</code>.
+Environment variables are accessed in quoted text with the Moustache-like syntax <code v-pre>{{variable name}}</code>.
 
 They are defined in the [environment file](/environment-file).
