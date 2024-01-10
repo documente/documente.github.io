@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Documenté"
   text: "The literate testing framework"
-  tagline:  Generate automated tests from user documentation
+  tagline: Generate automated tests from user documentation
   image:
     src: /animation.svg
     alt: Documenté logo
@@ -27,4 +27,3 @@ features:
   - title: 🌲 Cypress Compatible
     details: Make your documentation ever-green by generating Cypress tests from it
 ---
-

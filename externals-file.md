@@ -13,8 +13,8 @@ Here is an example of an externals file that exposes a function to call a REST A
 ```js
 // externals.js
 module.exports = {
-  'task list is empty': () => {
-    cy.request('DELETE', 'http://localhost:5000/api/all-tasks');
+  "task list is empty": () => {
+    cy.request("DELETE", "http://localhost:5000/api/all-tasks");
   }
 };
 ```

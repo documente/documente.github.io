@@ -247,7 +247,7 @@ Asserts that the given selector has a given number of occurrences.
 
 For example, if the selector matches 3 elements, then the following assertion is valid:
 
-```it should have 3 occurrences```
+`it should have 3 occurrences`
 
 #### Patterns
 

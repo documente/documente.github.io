@@ -8,7 +8,126 @@ Documenté is based on a language called Phrasé.
 It is based on Behavior-Driven Development (BDD) with Given-When-Then keywords.
 It is designed to be intuitive and easy to learn.
 
+### Fluent Component Selection
+
+Within test sentences, component selection is facilitated by traversing the System Under Test (SUT) tree representation
+defined in the [selectors file](/selectors-file).
+
+For instance, consider the following selectors tree:
+
+```yaml
+foo:
+  _selector: "#foo"
+  bar: "#bar"
+  baz: "#baz"
+```
+
+You can select the `bar` component by specifying the path "foo bar". (e.g. `when I click on foo bar`).
+
+In a given section, the most recently selected node is remembered,
+allowing you to omit parts of the hierarchy in subsequent paths.
+Node resolution follows these rules:
+
+- Search among the children of the most recently selected node.
+- Explore among the siblings of the most recently selected node.
+- Resolve a node starting from the root and navigating down.
+
+It allows you to write test sentences like this:
+
+```
+Given I click on foo bar
+when I click on baz
+then foo should be hidden
+```
+
+Note that the `foo` component is not explicitly selected in the `when` sections.
+
+This fluent selection mechanism enhances the ease with which components can be identified and interacted with in your test sentences.
+
+### Actions
+
+An **action** refers to a specific interaction or operation performed on the application under test (SUT). Actions can
+take two forms:
+
+- User actions
+- System state changes
+
+#### User actions
+
+These interactions typically mirror user actions, such as clicking buttons, entering text, navigating through pages, or interacting with various elements.
+
+Actions are integral components of test scenarios, encapsulating the steps required to simulate user behavior and interactions with the application. They serve as the building blocks for constructing meaningful and comprehensive test cases.
+
+The library provides a range of built-in user actions, simplifying the testing process for common operations, including:
+
+- visit
+- click
+- type
+- clear
+- hover
+
+You can also define custom user actions. This allows testers and developers to define actions that are specific to their application requirements or to encapsulate complex sequences of interactions.
+
+Example custom user action :
+
+```
+When I enter "Hello, World!" in message field
+then welcome message should be visible
+done
+
+In order to enter {{text}} in $element:
+- I click on its button
+- I type "{{text}}" into input
+- I click confirm button
+done
+```
+
+Custom actions are structured with a header following the form `In order to [action name]:`, followed by a bullet list of statements detailing the steps required for the action to complete. These custom actions can also define named parameters using the mustache-like syntax `{{parameter name}}`.
+
+#### System state changes
+
+System state changes are used to define the initial state of the application under test (SUT) or to simulate changes in the system state. These changes can be used to set up the application for testing or to simulate specific scenarios.
+
+### Assertions
+
+Assertions refer to statements or conditions that validate the expected outcomes of specific actions or interactions within your test scenarios. These statements act as checkpoints, ensuring that the application under test behaves as anticipated.
+
+The library provides built-in assertions such as :
+
+- should be visible
+- should exist
+- should have text
+
+As every application is different, you can also define custom assertions or overwrite the existing ones.
+
+Example custom assertion:
+
+```
+When I click on login form confirm button then login form should show login error message
+done
+
+For $element to show login error message:
+- its error message should be visible
+- it should have text "Please check your credentials"
+done
+```
+
+Custom assertions are built with a header following the form `For $element to [assertion name]:`, followed by a bullet list of statements.
+
 ## Sections
+
+Test cases are structured and organized into sections. There are two main types of sections:
+
+- Test scenario sections that are built with a Given-When-Then structure
+- Reusable sections that are built with a header followed by a bullet list of statements
+
+Reusable sections are declined in two forms:
+
+- Custom actions
+- Custom assertions
+
+Test scenario sections are used to define the test cases that will be executed against the application under test (SUT).
+They may use one or more custom statements defined as custom actions and assertions.
 
 ### Given-When-Then section
 
@@ -33,7 +152,7 @@ The `given` part is optional and serves to establish prerequisites for the test.
 Prerequisites involve actions on the system, either in the form of user actions or system state changes.
 
 - A user action starts with the `I` pronoun, followed by a verb. Actions may include a target, introduced by the `on` preposition.
-The target is identified as a component, chosen by specifying a path in the System Under Test (SUT) tree representation. This path is a sequence of component names separated by spaces.
+  The target is identified as a component, chosen by specifying a path in the System Under Test (SUT) tree representation. This path is a sequence of component names separated by spaces.
 - A system state change is expressed by a free-form statement which can include arguments. System state changes are mapped to custom functions declared in the [Externals file](/externals-file).
 
 User actions and system state changes can be linked using the `and` keyword.

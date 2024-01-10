@@ -18,14 +18,14 @@ If not specified, a file named `documente.config.yml` will be searched in the cu
 
 The following example shows the configuration for a project using Cypress as a test runner.
 
-```yaml
+````yaml
 input: [docs/**/*.md, user-guide/**/*.md]
 selectors: tests/selectors.yml
 runner: cypress
 outputDir: cypress/integration
 testRegex: '```test(\[^`]*)```'
 env: tests/env.yml
-```
+````
 
 ## Options
 
@@ -58,7 +58,7 @@ For Playwright, the default value is `tests`.
 
 (Optional) A regular expression used to extract the test cases from the input files.
 
-The default value is <code v-pre>\```phras\[ée](\[^`]*)```</code>.
+The default value is <code v-pre>\```phras\[ée](\[^`]\*)```</code>.
 This regex matches the following Markdown code block:
 
 ````
