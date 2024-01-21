@@ -57,7 +57,7 @@ welcome message: .welcome-message
 
 ### Writing specifications
 
-Specifications are written in Markdown files, using the [Phrasé](https://github.com/documente/phrase) syntax.
+Specifications are written in Markdown files, using the [Phrasé](https://github.com/documente/documente/tree/main/packages/phrase) syntax.
 
 ::: tip
 You can also read Phrasé code from other kind of files.
