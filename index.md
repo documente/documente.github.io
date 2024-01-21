@@ -11,8 +11,8 @@ hero:
     alt: Documenté logo
   actions:
     - theme: brand
-      text: Get Started
-      link: /get-started
+      text: Getting Started
+      link: /getting-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/documente

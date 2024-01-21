@@ -1,4 +1,4 @@
-# Get started
+# Getting started
 
 This guide will help you get started with Documenté. You will learn how to set up your project, write your first specification using the Phrasé language, and run your tests generated from your documentation.
 
@@ -10,22 +10,22 @@ Documenté integrates into projects with a end-to-end testing framework installe
 
 ### Installation
 
-Install Documenté as a dev dependency:
+Install Documenté generator as a dev dependency:
 
 ```bash
-yarn add --dev @documente/documente
+yarn add --dev @documente/generator
 ```
 
 Or with npm:
 
 ```bash
-npm install --save-dev @documente/documente
+npm install --save-dev @documente/generator
 ```
 
 You can also install Documenté globally:
 
 ```bash
-npm install --global @documente/documente
+npm install --global @documente/generator
 ```
 
 ### Configuration
