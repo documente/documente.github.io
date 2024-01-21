@@ -11,13 +11,13 @@ It's a good starting point to get familiar with the typical workflow of using Do
 
 ## The Kitchen Sink
 
-The [kitchen-sink](https://github.com/documente/kitchen-sink) repository contains a static website that is used
+The [kitchen-sink](https://github.com/documente/documente/tree/main/packages/kitchen-sink) repository contains a static website that is used
 to showcase the testing API of Documenté. It contains small snippets of Phrasé tests that can be used as a reference
 when writing tests.
 
 The repository comes with the configuration to generate the tests and run them locally against the website.
 
-The website is deployed at [documente.github.io/kitchen-sink](https://documente.github.io/kitchen-sink/).
+The website is deployed at [documente.github.io/documente](https://documente.github.io/documente/).
 
 ## Example SUT
 
