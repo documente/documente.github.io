@@ -13,12 +13,6 @@ Documenté integrates into projects with a end-to-end testing framework installe
 Install Documenté generator as a dev dependency:
 
 ```bash
-yarn add --dev @documente/generator
-```
-
-Or with npm:
-
-```bash
 npm install --save-dev @documente/generator
 ```
 
