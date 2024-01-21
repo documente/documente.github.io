@@ -19,7 +19,7 @@ export default defineConfig({
         text: "Introduction",
         items: [
           { text: "What is Documenté", link: "/guide" },
-          { text: "Get started", link: "/get-started" },
+          { text: "Getting started", link: "/getting-started" },
           { text: "CLI configuration", link: "/cli-configuration" },
           { text: "Language overview", link: "/language-overview" },
           { text: "API reference", link: "/api-reference" },
