@@ -80,3 +80,16 @@ then the login form should be visible
 The YAML file must contain a dictionary of strings.
 
 See [Environment file](/environment-file) for more details.
+
+### watch
+
+(Optional) A boolean value indicating whether the CLI should watch the input files for changes.
+
+When set to `true`, the CLI will re-run tests extraction when one of these files is modified:
+
+- The input files
+- The selectors file
+- The externals file
+- The environment file
+
+The default value is `false`.
