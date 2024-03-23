@@ -87,6 +87,22 @@ When I rightclick confirm button
 When I rightclick on confirm button
 ```
 
+### hover
+
+Triggers `mouseenter` and `mouseover` events on the given element.
+
+#### Patterns
+
+- `hover <selector>`
+- `hover on <selector>`
+
+#### Examples
+
+```
+When I hover confirm button
+When I hover on confirm button
+```
+
 ### type
 
 Types the given text into the given element.
