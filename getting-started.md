@@ -29,7 +29,7 @@ Create a `documente.config.yml` file at the root of your project:
 ```yaml
 runner: playwright # either "playwright" or "cypress"
 input: docs/**/*.md # location of documentation to extract tests from
-outputDir: tests # directory in which tests should be generated
+outputFolder: tests # directory in which tests should be generated
 selectors: documente/selectors.yaml # path to selectors file
 ```
 

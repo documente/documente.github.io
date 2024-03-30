@@ -22,7 +22,7 @@ The following example shows the configuration for a project using Cypress as a t
 input: [docs/**/*.md, user-guide/**/*.md]
 selectors: tests/selectors.yml
 runner: cypress
-outputDir: cypress/integration
+outputFolder: cypress/integration
 testRegex: '```test(\[^`]*)```'
 env: tests/env.yml
 ````
@@ -46,7 +46,7 @@ See [External file](/externals-file) for more details.
 
 (Required) The test runner to use. Possible values are `cypress` and `playwright`.
 
-### outputDir
+### outputFolder
 
 (Optional) A path to a directory where the generated test files will be written.
 
@@ -93,3 +93,7 @@ When set to `true`, the CLI will re-run tests extraction when one of these files
 - The environment file
 
 The default value is `false`.
+
+### waitBeforeScreenshot
+
+(Optional) A number of milliseconds to wait before taking a screenshot.
